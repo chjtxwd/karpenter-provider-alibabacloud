@@ -20,7 +20,7 @@ jobs:
       - name: Config DockerHub
         uses: docker/login-action@v3
         with:
-          registry: docker.io
+          registry: reg.haijin666.top
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
@@ -28,5 +28,5 @@ jobs:
 
       - name: build and publish image
         run: |
-          export KO_DOCKER_REPO=docker.io/cloudpilotai/karpenter-provider-alibabacloud
-          ko build --bare github.com/cloudpilot-ai/karpenter-provider-alibabacloud/cmd/controller
+          export KO_DOCKER_REPO=reg.haijin666.top/cloudpilotai/karpenter-provider-alibabacloud
+          ko build --bare github.com/chjtxwd/karpenter-provider-alibabacloud/cmd/controller
