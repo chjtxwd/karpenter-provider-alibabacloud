@@ -28,5 +28,6 @@ jobs:
 
       - name: build and publish image
         run: |
-          export KO_DOCKER_REPO=reg.haijin666.top/cloudpilotai/karpenter-provider-alibabacloud
           ko build --bare github.com/chjtxwd/karpenter-provider-alibabacloud/cmd/controller
+        env:
+          KO_DOCKER_REPO: reg.haijin666.top/cloudpilotai/karpenter-provider-alibabacloud
